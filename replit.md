@@ -1,6 +1,6 @@
-# [Project name]
+# SkillPass
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+SkillPass is a digital skill passport prototype that helps students prove competencies and helps recruiters verify and match candidates.
 
 ## Run & Operate
 
@@ -22,23 +22,27 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/skillpass/src/App.tsx` — routed React prototype, demo data, localStorage persistence, and product interactions
+- `artifacts/skillpass/src/index.css` — SkillPass visual system and responsive styling
+- `artifacts/skillpass/src/pages/not-found.tsx` — fallback route
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The first build is frontend-only because the project brief calls for a college prototype, not production infrastructure.
+- Demo data is seeded in the client and persisted through localStorage so the assessment and evidence flows survive refreshes.
+- The public verification flow is intentionally separate from the signed-in-style workspace shell to make the recruiter story easy to demonstrate.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+The prototype includes a landing page, student dashboard, digital passport, timed Java assessment, public passport verification, recruiter search, role matching, evidence vault, notifications, and settings. It follows the demo story from adding proof to recruiter verification.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+No additional preferences recorded.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- This prototype expects browser localStorage; clearing site data resets the demo state.
 
 ## Pointers
 

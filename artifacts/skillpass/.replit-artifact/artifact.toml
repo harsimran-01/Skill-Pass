@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "SkillPass"
+description = "A digital skill passport and competency verification platform for students and recruiters, with evidence-backed profiles, assessments, QR verification, and skill matching."
+version = "1.0.0"
+id = "artifacts/skillpass"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 26158
+
+[services.development]
+run = "pnpm --filter @workspace/skillpass run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/skillpass", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/skillpass/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "26158"
+BASE_PATH = "/"
